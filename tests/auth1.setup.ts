@@ -3,7 +3,7 @@ import path from 'path';
 
 const authFile = path.join(__dirname, '../playwright/.auth/user.json');
 
-setup('authenticate', async ({ page }) => {
+setup('AUTH CUSTOMER', async ({ page }) => {
   await page.goto('http://localhost/plywood/public/login');
   await page.getByRole('textbox', { name: 'Username' }).click();
   await page.getByRole('textbox', { name: 'Username' }).fill('adel');

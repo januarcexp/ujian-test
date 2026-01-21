@@ -26,4 +26,13 @@ test('DASHBOARD ADMIN TEST MEMASTIKAN SEMUA TOMBOL FITUR', async ({ page }) => {
   await page.getByRole('link', { name: 'Chat' }).click();
   await page.getByRole('button', { name: 'admin' }).click();
   await page.getByRole('link', { name: ' Profile' }).click();
+
+
+   await page.getByRole('button', { name: 'admin' }).click();
+  await page.getByRole('link', { name: ' Logout' }).click();
+  page.once('dialog', dialog => {
+    console.log(`Dialog message: ${dialog.message()}`);
+    dialog.dismiss().catch(() => {});
+  });
+  await page.getByRole('link', { name: 'Logout' }).click();
 });
